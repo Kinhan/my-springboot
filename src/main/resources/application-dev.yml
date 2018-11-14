@@ -1,0 +1,25 @@
+#服务端口号
+server:
+    port: 8080
+# jdbc_config
+datasourcespring:
+    datasource:
+        driver-class-name: com.mysql.jdbc.Driver
+spring:
+    #redis
+    redis:
+        host: 127.0.0.1
+        password: 123456
+        port: 6379
+    #数据库连接
+    datasource:
+        userName: root
+        password: root
+        url: jdbc:mysql://127.0.0.1:3306/my-springboot?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&useSSL=false&zeroDateTimeBehavior=convertToNull
+    #关闭thymeleaf缓存
+    thymeleaf:
+        cache: false
+    data:
+        #mongo
+        mongodb:
+            uri: mongodb://admin:By%24N6%3D%21bV%23@47.94.204.52:27017/admin?3t.databases=local&3t.uriVersion=2&3t.connectionMode=direct&3t.connection.name=suoim_test&readPreference=primary

@@ -1,0 +1,74 @@
+spring:
+    application:
+        name: my-springboot
+    profiles:
+        active: dev
+    cache:
+        type: redis
+    #redis缓存
+    redis:
+        # Redis默认情况下有16个分片，这里配置具体使用的分片，默认是0
+        database: 0
+        # 连接超时时间（毫秒）
+        timeout: 10000ms
+        #lettuce客户端
+        lettuce:
+            #redis连接池
+            pool:
+                # 连接池最大阻塞等待时间（使用负值表示没有限制） 默认 -1
+                max-wait: -1ms
+                # 连接池中的最小空闲连接 默认 0
+                min-idle: 1
+                # 连接池中的最大空闲连接 默认 8
+                max-idle: 8
+                # 连接池最大连接数（使用负值表示没有限制） 默认 8
+                max-active: 8
+            shutdown-timeout: 100ms
+#jedis客户端
+#        jedis:
+#            pool:
+#                max-active: 8
+#                max-idle: 8
+#                max-wait: -1ms
+#                min-idle: 0
+    datasource:
+        #数据库连接池
+        #Hikari will use the above plus the following to setup connection pooling
+        type: com.zaxxer.hikari.HikariDataSource
+        hikari:
+            auto-commit: true
+            connection-test-query: SELECT 1
+            connection-timeout: 30000
+            idle-timeout: 30000
+            max-lifetime: 1800000
+            maximum-pool-size: 15
+            minimum-idle: 5
+            pool-name: DatebookHikariCP
+#mybatis配置
+mybatis:
+    configuration:
+        #Map包含值为null的字段
+        call-setters-on-nulls: true
+        # 驼峰命名规范 如：数据库字段是  order_id 那么 实体字段就要写成 orderId
+        map-underscore-to-camel-case: true
+    mapper-locations: classpath:mapper/*.xml
+    type-aliases-package: com.ljh.myspringboot.model
+#pagehelper分页助手配置
+pagehelper:
+    helper-dialect: mysql
+    params: count=countSql
+    reasonable: true
+    row-bounds-with-count: true
+    support-methods-arguments: true
+#通用mapper配置
+mapper:
+    # 主键自增回写方法,默认值MYSQL
+    identity: MYSQL
+    mappers: tk.mybatis.mapper.common.BaseMapper,tk.mybatis.mapper.common.Mapper
+    # 设置 insert 和 update 中，是否判断字符串类型!=''
+    not-empty: false
+##devtools
+#restart:
+#  include:
+#      mapper: /mapper-[\\w-\\.]+jar
+#      pagehelper: /pagehelper-[\\w-\\.]+jar
