@@ -226,8 +226,8 @@
     <!--jdbc连接池-->
     <logger name="com.zaxxer.hikari" level="INFO"/>
 
-    <!--redis连接池-->
-    <logger name="io.lettuce" level="INFO"/>、
+    <!--&lt;!&ndash;redis连接池&ndash;&gt;-->
+    <!--<logger name="io.lettuce" level="INFO"/>-->
 
     <!--mongo-->
     <logger name="org.mongodb.driver" level="INFO"/>
