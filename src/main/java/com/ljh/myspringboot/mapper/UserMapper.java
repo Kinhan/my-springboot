@@ -1,6 +1,6 @@
 package com.ljh.myspringboot.mapper;
 
-import com.ljh.myspringboot.model.User;
+import com.ljh.myspringboot.entity.User;
 import tk.mybatis.mapper.common.Mapper;
 
 /**

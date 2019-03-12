@@ -3,7 +3,7 @@ package com.ljh.myspringboot.service;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.ljh.myspringboot.mapper.UserMapper;
-import com.ljh.myspringboot.model.User;
+import com.ljh.myspringboot.entity.User;
 import com.ljh.myspringboot.service.base.BaseService;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,7 +21,7 @@ import java.util.List;
  * @Author: linjinhan
  * @CreateDate: 2018/10/11 10:15
  */
-@Service
+//@Service
 public class UserService extends BaseService {
 
     @Autowired

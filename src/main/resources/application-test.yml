@@ -6,6 +6,15 @@ datasourcespring:
     datasource:
         driver-class-name: com.mysql.jdbc.Driver
 spring:
+    swagger:
+        enabled: true
+        exclude-path: /error
+        title: 我的spingboot
+        description: 我的spingboot学习工程
+        version: v1.0
+        contact:
+            name: kinhan_lin
+            email: kinhan_lin@163.com
     #redis
     redis:
         host: 127.0.0.1

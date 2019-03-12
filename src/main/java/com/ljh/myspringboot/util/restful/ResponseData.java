@@ -1,5 +1,8 @@
 package com.ljh.myspringboot.util.restful;
 
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -8,10 +11,14 @@ import java.util.Map;
  * @Author: linjinhan
  * @CreateDate: 2018/10/11 13:58
  */
+@ApiModel
 public class ResponseData {
 
+    @ApiModelProperty("返回信息")
     private final String message;
+    @ApiModelProperty("返回状态码")
     private final int code;
+    @ApiModelProperty("返回内容")
     private final Map<String, Object> data = new HashMap<String, Object>();
 
     public String getMessage() {

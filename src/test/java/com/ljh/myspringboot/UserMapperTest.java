@@ -1,6 +1,6 @@
 package com.ljh.myspringboot;
 
-import com.ljh.myspringboot.model.User;
+import com.ljh.myspringboot.entity.User;
 import com.ljh.myspringboot.service.UserService;
 import org.junit.Test;
 import org.junit.runner.RunWith;

@@ -2,7 +2,8 @@ package com.ljh.myspringboot.controller;
 
 import com.google.gson.JsonObject;
 import com.ljh.myspringboot.util.log.LogHelper;
-import com.ljh.myspringboot.model.User;
+import com.ljh.myspringboot.entity.User;
+import io.swagger.annotations.Api;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -21,18 +22,19 @@ import javax.servlet.http.HttpServletResponse;
 @RestController
 @Slf4j
 @RequestMapping("/ua")
+@Api(tags = "3.1", description = "获取UA信息", value = "获取UA信息并写入特定日志")
 public class UaTestController {
 
     @GetMapping("info")
     public ResponseEntity getUaInfo(HttpServletRequest request, HttpServletResponse response){
 
-        String agent= request.getHeader("user-agent");
+        String userAgent= request.getHeader("user-agent");
 
 
         log.error("================》开始写入特定日志");
-        JsonObject uaMsg = new JsonObject();
-        uaMsg.addProperty("ua",agent);
-        LogHelper.log2File("My-Info2",uaMsg);
+        JsonObject uaInfo = new JsonObject();
+        uaInfo.addProperty("ua",userAgent);
+        LogHelper.log2File("UA-Info",uaInfo);
         User user = new User();
         user.setId("qerwefad");
         user.setName("safdsf");
@@ -42,7 +44,7 @@ public class UaTestController {
         log.error("================》写入特定日志完成");
 
 
-        return new ResponseEntity(agent,HttpStatus.OK);
+        return new ResponseEntity(userAgent,HttpStatus.OK);
     }
 
 

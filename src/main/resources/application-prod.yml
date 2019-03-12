@@ -6,6 +6,8 @@ datasourcespring:
     datasource:
         driver-class-name: com.mysql.jdbc.Driver
 spring:
+    swagger:
+        enabled: false
     #redis
     redis:
         host: 127.0.0.1

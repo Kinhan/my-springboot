@@ -1,6 +1,6 @@
 package com.ljh.myspringboot.repository;
 
-import com.ljh.myspringboot.model.User;
+import com.ljh.myspringboot.entity.User;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
 /**
